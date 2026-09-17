@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="소개, 이력서, 자기소개서, 포트폴리오를 한곳에서 살펴보는 개인 커리어 페이지입니다.">
+  <meta name="theme-color" content="#f7f8fa">
+  <title>Career Folio — 이력서 & 포트폴리오</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="profile.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+  <aside class="sidebar">
+    <a class="brand" href="#home" aria-label="Career Folio 홈"><span class="brand-mark">f.</span>career folio<span class="brand-dot">®</span></a>
+    <div class="sidebar-profile"><div class="avatar" aria-hidden="true">ME<span></span></div><strong data-profile="name"></strong><span data-profile="role"></span></div>
+    <div class="nav-caption">MY CAREER</div>
+    <nav aria-label="주 메뉴">
+      <a href="#home" data-nav="home"><span class="nav-icon">⌂</span>소개<span class="nav-number">01</span></a>
+      <a href="#resume" data-nav="resume"><span class="nav-icon">▤</span>이력서<span class="nav-number">02</span></a>
+      <a href="#story" data-nav="story"><span class="nav-icon">≡</span>자기소개서<span class="nav-number">03</span></a>
+      <a href="#work" data-nav="work"><span class="nav-icon">▦</span>포트폴리오<span class="nav-number">04</span></a>
+    </nav>
+    <div class="sidebar-bottom"><span class="small-label">LET’S CONNECT</span><a id="contact-link" href="#contact">연락처 확인 <span>↗</span></a><p>나의 경험을, 한눈에.</p><span class="copyright">© <span id="year"></span> Career Folio</span></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><span>PERSONAL PORTFOLIO <span class="topbar-divider">/</span> <span id="breadcrumb">소개</span></span><span class="template-badge">내용 입력 전 · 템플릿</span></header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="footer"><span>경험과 생각, 그리고 앞으로의 가능성.</span><a href="#home">처음으로 ↑</a></footer>
+  </div>
+</body>
+</html>
