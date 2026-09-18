@@ -31,3 +31,4 @@
 .mentored-actions .button { min-width:130px; justify-content:space-between; gap:28px; }
 .mentored-preview h2 { word-break:keep-all; }
 .personal-video-heading { margin:28px 0 18px; } .personal-video-heading h3 { margin-top:8px; font-size:19px; word-break:keep-all; } .personal-video-gallery { margin-bottom:48px; } .production-experience-heading { margin:20px 0; font-size:18px; } .personal-shorts .motion-thumb { aspect-ratio:9/16; } .personal-shorts .motion-thumb img { object-fit:cover; } .personal-short-player { aspect-ratio:9/16; max-width:390px; margin-inline:auto; } @media(max-width:640px) { .personal-shorts { grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 14px; } }
+.project-video-work { margin:24px 0 36px; } .project-video-work h2 { font-size:18px; margin-bottom:18px; word-break:keep-all; }
