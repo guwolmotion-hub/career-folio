@@ -26,3 +26,6 @@
 @media(max-width:360px){.hero h1{font-size:27px}.topbar>span:first-child{font-size:7px}.identity-caption{font-size:5px}}
 @media print{.resume-intro{grid-template-columns:1fr;gap:14px;padding:19px}.resume-identity{padding-bottom:12px;gap:16px}.resume-intro>p{font-size:10px;line-height:1.85}.experience-group{margin-top:15px;break-inside:avoid}.experience-group h4{font-size:11px;break-after:avoid}.experience-group li{font-size:10px;line-height:1.65}.experience-group ul{gap:5px}.timeline-item{break-inside:auto;grid-template-columns:120px 1fr;padding:20px 0}.timeline-item>div>h3{break-after:avoid}.timeline-item .timeline-subtitle{break-after:avoid}.timeline-item p{orphans:3;widows:3}.software-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.software-card{padding:15px}.software-card h3{font-size:12px}.software-card p{font-size:10px}.archive-entry{break-inside:avoid}}
 @media print{.document-section{margin:18px 0}.timeline-item{padding:15px 0}.skill{padding:12px}.software-card{padding:11px 13px}.software-grid{gap:10px}.document-section:last-child{break-inside:avoid}.document-section:last-child .timeline{break-inside:avoid}.timeline{padding-top:0;padding-bottom:0}}
+
+.mentored-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+.mentored-actions .button { min-width:130px; justify-content:space-between; gap:28px; }

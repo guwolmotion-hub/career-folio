@@ -9,8 +9,7 @@ function youtubeId(raw) {
   } catch { return ''; }
 }
 function filteredMotionItems() {
-  return motionItems.filter(item => (motionState.category === '전체' || item.category === `영상/모션${motionState.category}`) && item.title.toLocaleLowerCase().includes(motionState.query.toLocaleLowerCase().trim()))
-    .sort((a,b) => Number(b.best) - Number(a.best));
+  return motionItems.filter(item => (motionState.category === '전체' || item.category === `영상/모션${motionState.category}`) && item.title.toLocaleLowerCase().includes(motionState.query.toLocaleLowerCase().trim()));
 }
 function motionCards() {
   const list = filteredMotionItems();
@@ -32,10 +31,7 @@ document.addEventListener('click', event => {
   const filter = event.target.closest('[data-motion-filter]');
   const more = event.target.closest('[data-motion-more]');
   if (filter) {
-    motionState.category = filter.dataset.motionFilter;
-    motionState.limit = 18;
-    document.querySelectorAll('[data-motion-filter]').forEach(button => { const active = button.dataset.motionFilter === motionState.category; button.classList.toggle('selected',active); button.setAttribute('aria-pressed',String(active)); });
-    document.querySelector('#motion-results').innerHTML = motionCards();
+    location.hash = filter.dataset.motionFilter === '전체' ? '#archive' : '#archive/'+filter.dataset.motionFilter;
   } else if (more) {
     const previousLimit = motionState.limit;
     motionState.limit += 18;
@@ -56,14 +52,17 @@ document.addEventListener('error', event => {
 
 function motionCard(item) {
     const vid = youtubeId(item.url);
-    return `<a class="motion-card" href="#motion/${encodeURIComponent(item.id)}"><div class="motion-thumb">${vid ? `<img src="https://i.ytimg.com/vi/${vid}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">` : '<span class="motion-placeholder">MOTION PORTFOLIO</span>'}<span class="motion-play" aria-hidden="true">▶</span>${item.best ? '<span class="motion-best">BEST</span>' : ''}</div><div class="motion-card-meta"><span>${item.category === '영상/모션3D' ? '3D' : '2D'} MOTION <span>· 수강생 작품</span></span><h3>${e(item.title)}</h3>${item.creator || item.author || item.studentName ? `<p>제작 · ${e(item.creator || item.author || item.studentName)}</p>` : ''}</div></a>`;
+    return `<a class="motion-card" href="#motion/${encodeURIComponent(item.id)}"><div class="motion-thumb">${vid ? `<img src="https://i.ytimg.com/vi/${vid}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">` : '<span class="motion-placeholder">MOTION PORTFOLIO</span>'}<span class="motion-play" aria-hidden="true">▶</span></div><div class="motion-card-meta"><span>${item.category === '영상/모션3D' ? '3D' : '2D'} MOTION <span>· 수강생 작품</span></span><h3>${e(item.title)}</h3>${item.creator || item.author || item.studentName ? `<p>제작 · ${e(item.creator || item.author || item.studentName)}</p>` : ''}</div></a>`;
 
 }
 
-function featuredMotionItems() {
-  return ['영상/모션2D','영상/모션3D'].flatMap(category=>motionItems.filter(item=>item.category===category).sort((a,b)=>Number(b.best)-Number(a.best)).slice(0,4));
-}
 function renderMentoredPreview() {
-  return '<section class="motion-gallery mentored-preview" aria-label="교육·디렉팅 대표 작품"><div class="motion-intro"><div><p class="eyebrow">DIRECTING / MENTORED WORK</p><h2>5년간의 디렉팅, 결과물로 남은 경험.</h2><p>직접 제작 작품이 아닌, 제가 교육·피드백·디렉팅 과정에 참여한 결과물입니다. 작품 제작은 수강생이며, 원본 제목과 제작자 표기를 유지합니다.</p></div></div><div class="motion-result"><span>대표 8개 · 2D 4개 / 3D 4개</span><span>수강생 제작 · 교육·피드백·디렉팅 참여</span></div><div class="motion-grid">'+featuredMotionItems().map(motionCard).join('')+'</div><div class="archive-entry"><div><p class="eyebrow">5 YEARS / 111 WORKS</p><h3>교육·디렉팅 전체 아카이브</h3><p>2D 59개 · 3D 52개 작품을 분류와 검색으로 살펴볼 수 있습니다.</p></div><a class="button primary" href="#archive">VIEW ALL DIRECTED WORKS <span>↗</span></a></div></section>';
+  return `<section class="motion-gallery mentored-preview" aria-label="교육·디렉팅 작품"><div class="motion-intro"><div><p class="eyebrow">DIRECTING / MENTORED WORK</p><h2>5년간의 디렉팅, 결과물로 남은 경험.</h2><p>직접 제작 작품이 아닌, 제가 교육·피드백·디렉팅 과정에 참여한 수강생 작품입니다. 2D와 3D 분야별 포트폴리오를 살펴보세요.</p></div></div><nav class="mentored-actions" aria-label="수강생 포트폴리오 보기"><a class="button primary" href="#archive/2D">2D <span>→</span></a><a class="button primary" href="#archive/3D">3D <span>→</span></a><a class="button secondary" href="https://www.youtube.com/@SICREATE_EDU" target="_blank" rel="noopener noreferrer">모두보기 <span>↗</span></a></nav></section>`;
 }
-function renderMotionArchive() { return '<a class="back-link" href="#work/mentoring">← 대표 디렉팅 작품으로</a>'+heading('DIRECTING ARCHIVE','교육·디렉팅 전체 아카이브.','수강생이 제작하고 정세일이 교육·피드백·디렉팅 과정에 참여한 작품 111개입니다.')+renderMotionGallery(); }
+function renderMotionArchive(category) {
+  motionState.category = ['2D','3D'].includes(category) ? category : '전체';
+  motionState.query = '';
+  motionState.limit = 18;
+  const label = motionState.category;
+  return '<a class="back-link" href="#work/mentoring">← 포트폴리오로 돌아가기</a>'+heading('DIRECTING ARCHIVE / '+label, label+' 모션그래픽 포트폴리오.', '수강생이 제작하고 정세일이 교육·피드백·디렉팅 과정에 참여한 작품입니다.')+renderMotionGallery();
+}
