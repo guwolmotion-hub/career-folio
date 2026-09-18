@@ -378,5 +378,49 @@ window.PROFILE = {
         "detail": "최종 콘텐츠 완성"
       }
     ]
-  }
+  },
+  "videos": [
+    {
+      "id": "2fOZyGnA25s",
+      "title": "코리아교육그룹 AI세미나 오프닝 영상",
+      "url": "https://youtu.be/2fOZyGnA25s",
+      "format": "video",
+      "category": "세미나 오프닝"
+    },
+    {
+      "id": "1wcgcSHo2u8",
+      "title": "SBS아카데미 AI크리에이터 과정 프로모션 영상",
+      "url": "https://youtu.be/1wcgcSHo2u8",
+      "format": "video",
+      "category": "과정 프로모션"
+    },
+    {
+      "id": "7fdQABAgong",
+      "title": "2D 카카오뱅크 프로모션 영상(개인작)",
+      "url": "https://youtu.be/7fdQABAgong",
+      "format": "video",
+      "category": "2D 모션그래픽 · 개인작"
+    },
+    {
+      "id": "zVB8io43Guk",
+      "title": "AI프롬프트엔지니어링 숏폼1",
+      "url": "https://youtube.com/shorts/zVB8io43Guk",
+      "format": "short",
+      "category": "AI 콘텐츠 · 숏폼"
+    },
+    {
+      "id": "vDqwjVeUTVM",
+      "title": "AI프롬프트엔지니어링 숏폼2",
+      "url": "https://youtube.com/shorts/vDqwjVeUTVM",
+      "format": "short",
+      "category": "AI 콘텐츠 · 숏폼"
+    },
+    {
+      "id": "iePUFVltBUI",
+      "title": "AI프롬프트엔지니어링 숏폼3",
+      "url": "https://youtube.com/shorts/iePUFVltBUI",
+      "format": "short",
+      "category": "AI 콘텐츠 · 숏폼"
+    }
+  ]
 };
