@@ -269,11 +269,11 @@ window.PROFILE = {
       "tasks": "Editing · Video Contents"
     },
     {
-      "name": "Cinema 4D",
+      "name": "Cinema 4D · Octane Render",
       "tasks": "3D Motion · Lighting · Look Development"
     },
     {
-      "name": "Photoshop",
+      "name": "Photoshop · Illustrator",
       "tasks": "Visual Design · Image Editing"
     },
     {
