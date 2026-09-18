@@ -1,4 +1,4 @@
-﻿# 정세일 | Career Folio
+# 정세일 | Career Folio
 
 영상·2D·3D 모션그래픽 제작에서 디렉팅, 프로젝트 운영, 생성형 AI 활용으로 확장한 경력을 소개합니다.
 
@@ -9,7 +9,7 @@
 - 소개: 제작의 전 과정을 보는 영상 제작자로서의 경력과 강점
 - 이력서: 재직 기간, 영상 제작·디렉팅·조직 관리·콘텐츠 기획의 구체적 역할
 - 보유 역량: 제작, 비주얼 디렉팅, 기획, 프로젝트 관리, 커뮤니케이션, AI 활용
-- 사용 프로그램: After Effects, Premiere Pro, Cinema 4D, Photoshop, RealFlow, Generative AI
+- 사용 프로그램: After Effects, Premiere Pro, Cinema 4D, Photoshop, Blender, AI
 - 자기소개서: 경력 / 제작 / 프로젝트·조직 기여 / AI / 지원 방향의 다섯 챕터
 - 개인 프로젝트: CG Production / Brand & Promotion / Education Innovation / AI × Video / Creative Direction & Review
 - 교육·디렉팅 작품: 대표 8개와 별도 전체 아카이브 111개(2D 59개, 3D 52개)
