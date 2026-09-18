@@ -29,3 +29,4 @@
 
 .mentored-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
 .mentored-actions .button { min-width:130px; justify-content:space-between; gap:28px; }
+.mentored-preview h2 { word-break:keep-all; }
